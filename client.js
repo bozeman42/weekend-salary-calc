@@ -52,14 +52,12 @@ function displayEmployees(){
   var $table=$('#employeeTableBody')
   $table.children().remove();
   for(var i = 0; i < employees.length; i += 1) {
-    console.log("$table",$table);
-    console.log('function return',tableRow(employees[i]));
     $table.append(tableRow(employees[i],i));
   }
 }
 
 function tableRow(employee,index){
-  var rowString = '<tr id="'+index+'">';
+  var rowString = '<tr>';
   rowString += '<td>' + employee.firstName + ' ' + employee.lastName + '</td>';
   rowString += '<td>' + employee.idNumber + '</td>';
   rowString += '<td>' + employee.jobTitle + '</td>';
@@ -67,7 +65,7 @@ function tableRow(employee,index){
   rowString += '<td><button class="deleteButton">Delete</button></td>';
   rowString += '</tr>';
   $row = $(rowString);
-  console.log($row);
+  $.data($row,'index',index);
   return $row;
 }
 
@@ -76,9 +74,9 @@ function clearInput(){
 }
 
 function deleteRow(){
-  var id = $(this).parent().parent().attr('id');
-  console.log(id);
-  employees.splice(id,1);
+  var $row = $(this).parent().parent();
+  var index = $.data($row,index);
+  employees.splice(index,1);
   displayEmployees();
   updateMonthlyExpenses();
 }
