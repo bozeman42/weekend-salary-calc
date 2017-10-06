@@ -2,5 +2,10 @@ console.log('js sourced')
 $(main);
 
 function main(){
-  console.log('jquery loaded');
+  addClickHandlers();
 }
+
+function addClickHandlers(){
+  $('#submit').on('click',submitForm);
+}
+
