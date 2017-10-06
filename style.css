@@ -1,4 +1,25 @@
-body, {
+body, h1, h2 {
   margin: 0;
   padding: 0;
+}
+
+header {
+  background-color: green;
+  height: 100px;
+}
+
+#inputSection {
+  background-color: pink;
+}
+
+#employeeInfoSection {
+  background-color: teal;
+}
+
+#employeeInfoSection {
+  background-color: lavender;
+}
+
+#monthlyExpensesSection {
+  background-color: yellow;
 }
