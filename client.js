@@ -59,7 +59,7 @@ function displayEmployees(){
 }
 
 function tableRow(employee,index){
-  var rowString = '<tr id="employee' + i + '">';
+  var rowString = '<tr id="'+index+'">';
   rowString += '<td>' + employee.firstName + ' ' + employee.lastName + '</td>';
   rowString += '<td>' + employee.idNumber + '</td>';
   rowString += '<td>' + employee.jobTitle + '</td>';
@@ -76,5 +76,9 @@ function clearInput(){
 }
 
 function deleteRow(){
-  $(this).parent().parent().remove();
+  var id = $(this).parent().parent().attr('id');
+  console.log(id);
+  employees.splice(id,1);
+  displayEmployees();
+  updateMonthlyExpenses();
 }
