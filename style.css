@@ -35,6 +35,7 @@ header h1 {
   float: left;
   height: 100px;
   width: 55%;
+  overflow: hidden; 
 }
 
 #inputSection > div {
@@ -50,6 +51,7 @@ header h1 {
 }
 
 #employeeTable {
+  clear: both;
   width: 100%;
   border-spacing: 0;
   table-layout: fixed;
@@ -80,7 +82,7 @@ th {
   border-bottom: none;
 }
 
-#employeeTableBody tr:nth-child(even){
+#employeeTableBody tr:nth-child(odd){
   background-color: #76B041
 }
 
@@ -88,6 +90,11 @@ th {
   background-color: #639A88
 }
 
+#employeeTableBody tr:hover {
+  filter: brightness(115%);
+  transform: scale(1.05);
+  transition: 50ms;
+}
 
 #monthlyExpensesSection {
   float: right;
