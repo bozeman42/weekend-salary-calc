@@ -5,6 +5,8 @@ var employees = [];
 
 function main(){
   addClickHandlers();
+  displayEmployees();
+  updateMonthlyExpenses();
 }
 
 function addClickHandlers(){
@@ -12,6 +14,9 @@ function addClickHandlers(){
   $('#employeeTableBody').on('click','.deleteButton',deleteRow);
 }
 
+var eddie = new Employee('Eddie','Bobberton',51,'Friend to All',45000);
+var robert = new Employee('Robert','Edwardson',52,'Fist Bumper',85000);
+employees.push(eddie,robert);
 
 
 function submitForm(){

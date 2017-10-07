@@ -13,34 +13,38 @@
 <body>
   <div class="container">
     <header>
-      <h1>Monthly Salary Expenses</h1>
+      <h1>MONTHLY SALARY EXPENSES</h1>
     </header>
     <section id="inputSection">
-      <h2>Enter Employee Information</h2>
       <div>
-        <input id="firstName" type="text" placeholder="First Name" >
-        <input id="lastName" type="text" placeholder="Last Name">
+        <h2>Enter Employee Information</h2>
+        <div id="name">
+          <input id="firstName" type="text" placeholder="First Name" >
+          <input id="lastName" type="text" placeholder="Last Name">
+        </div>
+        <input id="idNumber" type="number" placeholder="ID Number">
+        <input id="jobTitle" type="text" placeholder="Job Title">
+        <input id="salary" type="number" placeholder="Annual Salary">
+        <button id="submit">Submit</button>
       </div>
-      
-      <input id="idNumber" type="number" placeholder="ID Number">
-      <input id="jobTitle" type="text" placeholder="Job Title">
-      <input id="salary" type="number" placeholder="Annual Salary">
-      <button id="submit">Submit</button>
     </section>
     <section id="monthlyExpensesSection">
       <h2>Monthly Expenses: $<span id="monthlyExpenses">0</span></h2>
     </section>
     <section id="employeeInfoSection">
-      <h2>Employees</h2>
-      <table id="employeeTable">
-        <thead>
-          <th>Name</th>
-          <th>ID Number</th>
-          <th>Job Title</th>
-          <th>Annual Salary</th>
-        </thead>
-        <tbody id="employeeTableBody"></tbody>
-      </table>
+      <div>
+        <h2>Employees</h2>
+        <table id="employeeTable">
+          <thead>
+            <th>Name</th>
+            <th>ID Number</th>
+            <th>Job Title</th>
+            <th>Annual Salary</th>
+            <th></th>
+          </thead>
+          <tbody id="employeeTableBody"></tbody>
+        </table>
+      </div>
     </section>
   </div>
 </body>
