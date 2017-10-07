@@ -24,11 +24,13 @@ for (var iterator = 0; iterator < 100; iterator++){
 
 function submitForm(){
   console.log('form submit clicked');
+
   var firstName = $('#firstName').val();
   var lastName = $('#lastName').val(); 
   var idNumber = parseInt($('#idNumber').val());
   var jobTitle = $('#jobTitle').val();
   var annualSalary = parseInt($('#salary').val());
+
   var employee = new Employee(firstName, lastName, idNumber, jobTitle, annualSalary);
   employees.push(employee);
   console.log(employee);

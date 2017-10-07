@@ -9,8 +9,8 @@ body {
 }
 
 .container {
-  background-color: #EFCA08;
   max-width: 900px;
+  background-color: snow;
   color: #111;
   margin: 0 auto;
 }
@@ -23,23 +23,23 @@ header {
   border-bottom-color: #333;
   position: relative;
 }
-
+  
 header h1 {
   float: left;
   position: absolute;
   bottom: 0;
-  margin-left: 10px;
+  margin-left: 30px;
 }
 
 #inputSection {
   float: left;
-  height: 100px;
+  height: 120px;
   width: 55%;
   overflow: hidden; 
 }
 
 #inputSection > div {
-  padding: 10px;
+  padding: 10px 10px 10px 30px;
 }
 
 #employeeInfoSection {
@@ -47,7 +47,7 @@ header h1 {
 }
 
 #employeeInfoSection > div {
-  padding: 20px;
+  padding: 30px;
 }
 
 #employeeTable {
@@ -83,11 +83,11 @@ th {
 }
 
 #employeeTableBody tr:nth-child(odd){
-  background-color: #F49F0A;
+  background-color: #639A88;
 }
 
 #employeeTableBody tr:nth-child(even){
-  background-color: #F08700;
+  background-color: #BBDEF0;
 }
 
 #employeeTableBody tr:hover {
@@ -99,10 +99,10 @@ th {
 #monthlyExpensesSection {
   float: right;
   height: 100px;
-  display: flex;
   width: 45%;
   justify-content: center;
-  align-items: center;
+  align-items: top;
+  padding-top: 10px;
 }
 
 #monthlyExpensesSection h2 {
