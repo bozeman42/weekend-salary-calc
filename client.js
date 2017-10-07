@@ -61,7 +61,7 @@ function tableRow(employee,index){
   rowString += '<td>' + employee.firstName + ' ' + employee.lastName + '</td>';
   rowString += '<td>' + employee.idNumber + '</td>';
   rowString += '<td>' + employee.jobTitle + '</td>';
-  rowString += '<td>' + employee.annualSalary + '</td>';
+  rowString += '<td class="salaryField">$' + employee.annualSalary + '</td>';
   rowString += '<td><button class="deleteButton">Delete</button></td>';
   rowString += '</tr>';
   $row = $(rowString);
