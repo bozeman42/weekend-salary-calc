@@ -5,12 +5,12 @@ body, h1, h2 {
 }
 
 body {
-  background-color: #3A5683;
+  background-color: #639A88;
 }
 
 .container {
+  background-color: #EFCA08;
   max-width: 900px;
-  background-color: #76B041;
   color: #111;
   margin: 0 auto;
 }
@@ -47,14 +47,14 @@ header h1 {
 }
 
 #employeeInfoSection > div {
-  padding: 10px;
+  padding: 20px;
 }
 
 #employeeTable {
   clear: both;
-  width: 100%;
   border-spacing: 0;
   table-layout: fixed;
+  width: 100%;
 }
 
 th {
@@ -83,11 +83,11 @@ th {
 }
 
 #employeeTableBody tr:nth-child(odd){
-  background-color: #76B041
+  background-color: #F49F0A;
 }
 
 #employeeTableBody tr:nth-child(even){
-  background-color: #639A88
+  background-color: #F08700;
 }
 
 #employeeTableBody tr:hover {
