@@ -18,7 +18,7 @@ function addClickHandlers(){
 // var eddie = new Employee('Eddie','Bobberton',51,'Friend to All',45000);
 // var robert = new Employee('Robert','Edwardson',52,'Fist Bumper',85000);
 // var craig = new Employee('Craig','Masterson',14,"Hearthstoner",160000)
-// for (var iterator = 0; iterator < 100; iterator++){
+// for (var iterator = 0; iterator < 1; iterator++){
 //   employees.push(eddie,robert,craig);
 // }
 
@@ -30,7 +30,6 @@ function submitForm(){
   var idNumber = parseInt($('#idNumber').val());
   var jobTitle = $('#jobTitle').val().trim();
   var annualSalary = parseInt($('#salary').val());
-  console.log(annualSalary);
   var formComplete = true;
   if (firstName === '') {
     formComplete = false;
@@ -53,11 +52,8 @@ function submitForm(){
     $('#salary').css('border-color','red');
   }
   if (formComplete) {
-    console.log((firstName !== '') && (lastName !== '') && (idNumber !== NaN) && (jobTitle !== '') && (annualSalary !== NaN));
     var employee = new Employee(firstName, lastName, idNumber, jobTitle, annualSalary);
     employees.push(employee);
-    console.log(employee);
-    console.log(employees);
     displayEmployees();
     updateMonthlyExpenses();
     clearInput();
@@ -85,8 +81,10 @@ function updateMonthlyExpenses() {
 function displayEmployees(){
   var $table=$('#employeeTableBody')
   $table.children().remove();
+  var $row;
   for(var i = 0; i < employees.length; i += 1) {
-    $table.append(tableRow(employees[i],i));
+    $row = tableRow(employees[i],i)
+    $table.append($row);
   }
 }
 
@@ -96,10 +94,15 @@ function tableRow(employee,index){
   rowString += '<td>' + employee.idNumber + '</td>';
   rowString += '<td>' + employee.jobTitle + '</td>';
   rowString += '<td class="salaryField">$' + employee.annualSalary + '</td>';
-  rowString += '<td><button class="deleteButton">Delete</button></td>';
   rowString += '</tr>';
+  var $delButton = $('<button class="deleteButton">Delete</button>');
+  var $cell = $('<td></td>');
+  $cell.append($delButton);
+  $delButton.data('pos',index)
+  console.log('cell',$cell);
   $row = $(rowString);
-  $.data($row,'index',index);
+  $row.append($cell);
+  console.log('row:',$row);
   return $row;
 }
 
@@ -108,8 +111,11 @@ function clearInput(){
 }
 
 function deleteRow(){
-  var $row = $(this).parent().parent();
-  var index = $.data($row,index);
+  console.log(this);
+  var $delButton = this;
+  console.log("row selected for deletion",$delButton);
+  console.log("Data on the delete button:",$.data($delButton,'index'));
+  var index = $.data($delButton,'pos');
   employees.splice(index,1);
   displayEmployees();
   updateMonthlyExpenses();
