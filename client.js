@@ -14,7 +14,7 @@ function addClickHandlers(){
   $('#employeeTableBody').on('click','.deleteButton',deleteRow);
 }
 
-// pre-populating employees for testing
+// // pre-populating employees for testing
 // var eddie = new Employee('Eddie','Bobberton',51,'Friend to All',45000);
 // var robert = new Employee('Robert','Edwardson',52,'Fist Bumper',85000);
 // var craig = new Employee('Craig','Masterson',14,"Hearthstoner",160000)

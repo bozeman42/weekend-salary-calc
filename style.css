@@ -91,7 +91,6 @@ th {
 
 #employeeTableBody tr:hover {
   background-color: snow;
-  transition: 50ms;
 }
 
 #monthlyExpensesSection {
