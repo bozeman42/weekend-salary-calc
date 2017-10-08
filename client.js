@@ -14,12 +14,13 @@ function addClickHandlers(){
   $('#employeeTableBody').on('click','.deleteButton',deleteRow);
 }
 
-
+// pre-populating employees for testing
 // var eddie = new Employee('Eddie','Bobberton',51,'Friend to All',45000);
 // var robert = new Employee('Robert','Edwardson',52,'Fist Bumper',85000);
 // var craig = new Employee('Craig','Masterson',14,"Hearthstoner",160000)
-// for (var iterator = 0; iterator < 1; iterator++){
-//   employees.push(eddie,robert,craig);
+// employees.push(eddie,robert,craig);
+// for (var j = 0; j < 100; j++){
+//   employees.push(new Employee(j,j,j,j,j));
 // }
 
 function submitForm(){
