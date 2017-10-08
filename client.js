@@ -15,29 +15,53 @@ function addClickHandlers(){
 }
 
 
-var eddie = new Employee('Eddie','Bobberton',51,'Friend to All',45000);
-var robert = new Employee('Robert','Edwardson',52,'Fist Bumper',85000);
-var craig = new Employee('Craig','Masterson',14,"Hearthstoner",160000)
-for (var iterator = 0; iterator < 100; iterator++){
-  employees.push(eddie,robert,craig);
-}
+// var eddie = new Employee('Eddie','Bobberton',51,'Friend to All',45000);
+// var robert = new Employee('Robert','Edwardson',52,'Fist Bumper',85000);
+// var craig = new Employee('Craig','Masterson',14,"Hearthstoner",160000)
+// for (var iterator = 0; iterator < 100; iterator++){
+//   employees.push(eddie,robert,craig);
+// }
 
 function submitForm(){
   console.log('form submit clicked');
-
-  var firstName = $('#firstName').val();
-  var lastName = $('#lastName').val(); 
+  $('input').removeAttr('style');
+  var firstName = $('#firstName').val().trim();
+  var lastName = $('#lastName').val().trim(); 
   var idNumber = parseInt($('#idNumber').val());
-  var jobTitle = $('#jobTitle').val();
+  var jobTitle = $('#jobTitle').val().trim();
   var annualSalary = parseInt($('#salary').val());
-
-  var employee = new Employee(firstName, lastName, idNumber, jobTitle, annualSalary);
-  employees.push(employee);
-  console.log(employee);
-  console.log(employees);
-  displayEmployees();
-  updateMonthlyExpenses();
-  clearInput();
+  console.log(annualSalary);
+  var formComplete = true;
+  if (firstName === '') {
+    formComplete = false;
+    $('#firstName').css('border-color','red');
+  }
+  if (lastName === '') {
+    formComplete = false;
+    $('#lastName').css('border-color','red');
+  }
+  if (isNaN(idNumber)) {
+    formComplete = false;
+    $('#idNumber').css('border-color','red');
+  }
+  if (jobTitle === '') {
+    formComplete = false;
+    $('#jobTitle').css('border-color','red');
+  }
+  if (isNaN(annualSalary)) {
+    formComplete = false;
+    $('#salary').css('border-color','red');
+  }
+  if (formComplete) {
+    console.log((firstName !== '') && (lastName !== '') && (idNumber !== NaN) && (jobTitle !== '') && (annualSalary !== NaN));
+    var employee = new Employee(firstName, lastName, idNumber, jobTitle, annualSalary);
+    employees.push(employee);
+    console.log(employee);
+    console.log(employees);
+    displayEmployees();
+    updateMonthlyExpenses();
+    clearInput();
+    }
 }
 
 function Employee(firstNameIn,lastNameIn,idNumberIn,jobTitleIn,annualSalaryIn) {

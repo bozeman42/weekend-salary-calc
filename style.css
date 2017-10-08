@@ -11,7 +11,7 @@ body {
 .container {
   max-width: 900px;
   background-color: snow;
-  color: #111;
+  color: #333;
   margin: 0 auto;
 }
 
@@ -40,6 +40,10 @@ header h1 {
 
 #inputSection > div {
   padding: 10px 10px 10px 30px;
+}
+
+input {
+  /* border: solid 1px transparent; */
 }
 
 #employeeInfoSection {
@@ -91,8 +95,7 @@ th {
 }
 
 #employeeTableBody tr:hover {
-  filter: brightness(115%);
-  transform: scale(1.05);
+  filter: hue-rotate(180deg);
   transition: 50ms;
 }
 
