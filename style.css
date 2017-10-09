@@ -32,9 +32,7 @@ header h1 {
 
 #inputSection {
   float: left;
-  height: 120px;
   width: 55%;
-  overflow: hidden; 
 }
 
 input {
