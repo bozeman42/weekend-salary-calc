@@ -37,6 +37,10 @@ header h1 {
   overflow: hidden; 
 }
 
+input {
+  font-size: 16px;
+}
+
 #inputSection > div {
   padding: 10px 10px 10px 30px;
 }
@@ -104,4 +108,10 @@ th {
 
 #monthlyExpensesSection h2 {
   align-content: center;
+}
+
+#incomplete {
+  font-family: helvetica;
+  font-weight: lighter;
+  color: red;
 }

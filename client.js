@@ -20,12 +20,13 @@ function addClickHandlers(){
 // var craig = new Employee('Craig','Masterson',14,"Hearthstoner",160000)
 // employees.push(eddie,robert,craig);
 // for (var j = 0; j < 100; j++){
-//   employees.push(new Employee(j,j,j,j,j));
+//   employees.push(new Employee(j,j,j,j,j*1000));
 // }
 
 function submitForm(){
   console.log('form submit clicked');
   $('input').removeAttr('style');
+  $('#incomplete').text('');
   var firstName = $('#firstName').val().trim();
   var lastName = $('#lastName').val().trim(); 
   var idNumber = parseInt($('#idNumber').val());
@@ -58,6 +59,8 @@ function submitForm(){
     displayEmployees();
     updateMonthlyExpenses();
     clearInput();
+    } else {
+      $('#incomplete').text('Please fill out all fields');
     }
 }
 
